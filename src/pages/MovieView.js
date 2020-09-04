@@ -84,7 +84,7 @@ function MovieView({ match }) {
           <div className="col-lg-8">
             <Cast />
             <br />
-            {/* <Video /> */}
+            <Video />
           </div>
           <div className="col-lg-4"></div>
         </div>
