@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn {
+  border-radius: 0;
+}
+
+.rate {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  background-color: #016FB9;
+  color:white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+ 
+}
+.wrapper {
+  display: flex;
+  overflow-x: auto;
+  height: 400px;
+}
+.wrappercast {
+  display: flex;
+  overflow-x: auto;
+
+}
+.item{
+  margin-left: 5px;
+}
+#trending{
+  text-transform: uppercase;
+}
+.jumbotron .card ,.jumbotron img{
+
+  border-radius:25px;
+}
+.header-view #nameyear span{
+font-weight: 900;
+color:white;
+font-size: 2.5em;
+}
+.header-view #nameyear span:nth-child(2){
+  font-weight: lighter;
+  color : grey;
+}
+.header-view p{
+  color : white;
+}
+.badge{
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+#tagline{
+  margin-top: 4rem;
+  color : grey;
+  font-style: italic;
+  font-size: larger;
+}
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
