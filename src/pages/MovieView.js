@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getSingular, getCredit, getVideo } from "../redux/movie/action";
 import Headerview from "../components/Headerview";
 import Cast from "../components/Cast";
-// import Video from "../components/Video";
+import Video from "../components/Video";
 import Loading from '../components/Loading'
 function MovieView({ match }) {
   const { id } = useParams();
