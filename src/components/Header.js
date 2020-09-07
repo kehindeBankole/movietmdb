@@ -1,8 +1,8 @@
 import React from "react";
-import {useSelector} from 'react-redux'
+// import {useSelector} from 'react-redux'
 function Header(props) {
-  const data = useSelector((state) => state.trend);
-  console.log(data.dataTrend.results[0].backdrop_path)
+ // const data = useSelector((state) => state.trend);
+
   const headerStyle = {
     backgroundImage:"url(https://images.pexels.com/photos/1040159/pexels-photo-1040159.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)",
     backgroundRepeat: "no-repeat",

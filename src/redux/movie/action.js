@@ -15,8 +15,51 @@ import {
   passcredit,
   fetchvideo,
   successvideo,
-  failvideo
+  failvideo,
+  tvfetchvideo,
+  tvsuccessvideo,
+  tvfailvideo,
+  fetchsingletv,
+  failsingletv,
+  passsingletv
 } from "./type";
+export const requestsingletv=()=>{
+  return{
+    type : fetchsingletv,
+ 
+  }
+}
+export const successsingletv=(data)=>{
+  return{
+    type:passsingletv,
+    payload : data
+  }
+}
+export const failsingleTV=(data)=>{
+  return{
+    type:failsingletv,
+    payload : data
+  }
+}
+export const requesttvvideo=()=>{
+  return{
+    type : tvfetchvideo,
+ 
+  }
+}
+export const passtvvideo=(data)=>{
+  return{
+    type:tvsuccessvideo,
+    payload : data
+  }
+}
+
+export const errortvvideo=(data)=>{
+  return{
+    type:tvfailvideo,
+    payload : data
+  }
+}
 export const requestvideo=()=>{
   return{
     type : fetchvideo,
@@ -154,5 +197,26 @@ export const getVideo = (id) => {
     )
       .then((res) => dispatch(passvideo(res.data)))
       .catch((er) => dispatch(errorvideo(er)));
+  };
+};
+export const getTV = (id) => {
+  return (dispatch) => {
+    // dispatch(requestcredit())
+    return Axios.get(
+      `
+      https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_KEY}&language=en-US&page=1`
+    )
+      .then((res) => dispatch(passvideo(res.data)))
+      .catch((er) => dispatch(errorvideo(er)));
+  };
+};
+export const getSingularTv = (id) => {
+  return (dispatch) => {
+    // dispatch(requestsingle())
+    return Axios.get(
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_KEY}&language=en-US`
+    )
+      .then((res) => dispatch(successsingletv(res.data)))
+      .catch((er) => dispatch(failsingleTV(er)));
   };
 };

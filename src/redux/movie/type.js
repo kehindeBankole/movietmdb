@@ -19,3 +19,11 @@ export const failcredit="failcredit"
 export const fetchvideo="fetchvideo"
 export const successvideo = "successvideo"
 export const failvideo = "failvideo"
+
+export const tvfetchvideo="fetchvideo"
+export const tvsuccessvideo = "successvideo"
+export const tvfailvideo = "failvideo"
+
+export const fetchsingletv="fetchsinglemovie"
+export const failsingletv="failsinglemovie"
+export const passsingletv="passsinglemovie"

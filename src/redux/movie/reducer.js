@@ -13,9 +13,19 @@ import {
   passcredit,
   fetchvideo,
   successvideo,
-  failvideo
+  failvideo,
+  tvfetchvideo,
+  tvsuccessvideo,
+  tvfailvideo,
+  fetchsingletv,
+  failsingletv,
+  passsingletv
 } from "./type";
-
+const inittvState = {
+  load: true,
+  dataTv: [],
+  err: "",
+};
 const inittrendState = {
   load: true,
   dataTrend: [],
@@ -34,6 +44,11 @@ const initCreditState = {
 const singleMovie = {
   load: true,
   movie: [],
+  err: "",
+};
+const singleTv = {
+  load: true,
+  TV: [],
   err: "",
 };
 const initVideo= {
@@ -155,6 +170,57 @@ export const singlereducer = (state = singleMovie, action) => {
         ...state,
         load: false,
         movie: [],
+        err: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+export const reducertv = (state = inittvState, action) => {
+  switch (action.type) {
+    case tvfetchvideo:
+      return {
+        ...state,
+        load: true,
+      };
+    case tvsuccessvideo:
+      return {
+        ...state,
+        load: false,
+        dataTv: action.payload,
+        err: "",
+      };
+    case tvfailvideo:
+      return {
+        ...state,
+        load: false,
+        dataTv: [],
+        err: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const singletvreducer = (state = singleTv, action) => {
+  switch (action.type) {
+    case fetchsingletv:
+      return {
+        ...state,
+        load: true,
+      };
+    case passsingletv:
+      return {
+        ...state,
+        load: false,
+        TV: action.payload,
+        err: "",
+      };
+    case failsingletv:
+      return {
+        ...state,
+        load: false,
+        TV: [],
         err: action.payload,
       };
     default:

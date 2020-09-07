@@ -9,6 +9,7 @@ function Movietrendlist() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTrending());
+    //eslint-disable-next-line
   }, []);
 if(data.dataTrend.load)return "loading"
   return (
@@ -19,7 +20,7 @@ if(data.dataTrend.load)return "loading"
           ? data.dataTrend.results.map((e, i) => {
               return (
                 <div className="item ml-4 mt-4" key={i}>
-                  <Link to={`/movie/${e.id}`}>
+                  <Link to={`/movie/${e.id}`} style={{textDecoration:"none"}}>
                     <Moviecardtrend
                       bgimage={`url('https://image.tmdb.org/t/p/w500/${e.poster_path}')`}
                       rate={e.vote_average}

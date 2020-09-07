@@ -18,6 +18,7 @@ function MovieView({ match }) {
     dispatch(getSingular(id));
     dispatch(getCredit(id));
     dispatch(getVideo(id));
+    //eslint-disable-next-line
   }, []);
   console.log(video);
   if(loadstate)return<Loading/>
