@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
-import { reducerpopular , reducertrend, singlereducer, reducercredit, reducervideo, reducertv, singletvreducer } from "./movie/reducer";
+import { reducerpopular , reducertrend, singlereducer, reducercredit, reducervideo, reducertv, singletvreducer, reducercredittv } from "./movie/reducer";
 const rootreducer = combineReducers({
   trend: reducertrend,
   popular:reducerpopular,
@@ -8,6 +8,7 @@ const rootreducer = combineReducers({
   credit : reducercredit,
   video:reducervideo,
   TV : reducertv,
-  singleTV : singletvreducer
+  singleTV : singletvreducer,
+  creditTV : reducercredittv
 });
 export const store = createStore(rootreducer, applyMiddleware(thunk));

@@ -21,8 +21,29 @@ import {
   tvfailvideo,
   fetchsingletv,
   failsingletv,
-  passsingletv
+  passsingletv,
+  fetchcredittv,
+  failcredittv,
+  passcredittv,
 } from "./type";
+export const requestcredittv=()=>{
+  return{
+    type : fetchcredittv,
+ 
+  }
+}
+export const successcredittv=(data)=>{
+  return{
+    type:passcredittv,
+    payload : data
+  }
+}
+export const errorcredittv=(data)=>{
+  return{
+    type:failcredittv,
+    payload : data
+  }
+}
 export const requestsingletv=()=>{
   return{
     type : fetchsingletv,
@@ -218,5 +239,16 @@ export const getSingularTv = (id) => {
     )
       .then((res) => dispatch(successsingletv(res.data)))
       .catch((er) => dispatch(failsingleTV(er)));
+  };
+};
+export const getCreditTV = (id) => {
+  return (dispatch) => {
+    // dispatch(requestcredit())
+    return Axios.get(
+      `
+      https://api.themoviedb.org/3/tv/${id}/credits?api_key=${process.env.REACT_APP_KEY}&language=en-US`
+    )
+      .then((res) => dispatch(successcredittv(res.data)))
+      .catch((er) => dispatch(errorcredittv(er)));
   };
 };

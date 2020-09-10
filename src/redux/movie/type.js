@@ -27,3 +27,7 @@ export const tvfailvideo = "failvideo"
 export const fetchsingletv="fetchsinglemovie"
 export const failsingletv="failsinglemovie"
 export const passsingletv="passsinglemovie"
+
+export const fetchcredittv="fetchcredittv"
+export const passcredittv ="passcredittv"
+export const failcredittv="failcredittv"

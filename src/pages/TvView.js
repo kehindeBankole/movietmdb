@@ -2,13 +2,15 @@ import React , {useEffect}from 'react'
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Headerview from '../components/Headerview';
-import { getSingularTv } from '../redux/movie/action';
+import { getSingularTv, getCreditTV } from '../redux/movie/action';
+import CastTV from '../components/CastTV';
 function TvView({match}) {
     const { id } = useParams();
     const state = useSelector((state) => state.singleTV.TV);
     const dispatch = useDispatch();
     useEffect(() => {
        dispatch( getSingularTv(id))
+       dispatch( getCreditTV(id))
        //eslint-disable-next-line
       }, []);
     return (
@@ -38,7 +40,7 @@ function TvView({match}) {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              {/* <Cast /> */}
+              <CastTV />
               <br />
               {/* <Video /> */}
             </div>

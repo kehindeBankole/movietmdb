@@ -19,7 +19,8 @@ function Moviecardtrend(props) {
             <span className="rate d-flex">
               <p className="mx-auto num" style={{ margin:'30% auto'}}>{props.rate}</p>
             </span>
-            <b className="text-muted" style={{marginTop:"15rem"}}>{props.name}</b>
+            <b className="text-black" style={{marginTop:"15rem"}}>{props.name}</b>
+            <p className="text-danger" style={{marginTop:""}}>{props.date} {props.day} , {props.year} </p>
           </div>
   
         </div>

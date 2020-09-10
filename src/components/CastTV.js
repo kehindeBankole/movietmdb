@@ -3,9 +3,9 @@ import { useSelector , useDispatch } from "react-redux";
 import noimage from '../components/noimage.jpg'
 import CreditCard from "./CreditCard";
 import Loading from "./Loading";
-function Cast(id) {
-  const cast = useSelector((state) => state.credit.credit);
-  const load = useSelector((state) => state.credit.load);
+function CastTV(id) {
+  const cast = useSelector((state) => state.creditTV.creditTV);
+  const load = useSelector((state) => state.creditTV.load);
 
 
   if(load)return<Loading/>
@@ -33,4 +33,4 @@ function Cast(id) {
   );
 }
 
-export default Cast;
+export default CastTV;

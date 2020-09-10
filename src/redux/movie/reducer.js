@@ -19,8 +19,16 @@ import {
   tvfailvideo,
   fetchsingletv,
   failsingletv,
-  passsingletv
+  passsingletv,
+  fetchcredittv,
+  failcredittv,
+  passcredittv,
 } from "./type";
+const initCreditTvState = {
+  load: true,
+  creditTV: [],
+  err: "",
+};
 const inittvState = {
   load: true,
   dataTv: [],
@@ -227,3 +235,26 @@ export const singletvreducer = (state = singleTv, action) => {
       return state;
   }
 };
+
+export const reducercredittv=(state=initCreditTvState , action)=>{
+  switch(action.type){
+    case fetchcredittv: return{
+      ...state,
+      load: true,
+    }
+    case passcredittv : return{
+      ...state,
+        load: false,
+        creditTV: action.payload,
+        err: "",
+    }
+    case failcredittv:
+      return {
+        ...state,
+        load: false,
+        creditTV: [],
+        err: action.payload,
+      };
+    default:return state
+  }
+}

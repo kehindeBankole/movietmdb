@@ -24,6 +24,9 @@ function TvPopular() {
                     bgimage={`url('https://image.tmdb.org/t/p/w500/${e.poster_path}')`}
                     rate={e.vote_average}
                     name={e.title}
+                    date={new Date(e.first_air_date).toLocaleString('default', { month: 'short' })}
+                    day={new Date(e.first_air_date).getDate()}
+                    year={new Date(e.first_air_date).getFullYear()}
                   />
                   </Link>
                 </div>

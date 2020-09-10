@@ -25,6 +25,9 @@ if(data.dataTrend.load)return "loading"
                       bgimage={`url('https://image.tmdb.org/t/p/w500/${e.poster_path}')`}
                       rate={e.vote_average}
                       name={e.title}
+                      date={new Date(e.release_date).toLocaleString('default', { month: 'short' })}
+                      day={new Date(e.release_date).getDate()}
+                      year={new Date(e.release_date).getFullYear()}
                     />
                   </Link>
                 </div>

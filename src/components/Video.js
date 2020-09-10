@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import ReactPlayer from "react-player";
 function Video() {
   const video = useSelector((state) => state.video.video);
+  const load = useSelector((state) => state.video.load);
+  if(load) return "loading"
   return (
     <div className="wrapper">
       {video.results
