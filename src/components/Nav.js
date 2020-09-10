@@ -5,7 +5,7 @@ function Nav() {
     <div>
       <nav className="navbar navbar-dark bg-dark py-3">
         <Link className="navbar-brand" to="/">
-          Navbar
+          <h1>TMDB</h1>
         </Link>
       </nav>
     </div>
